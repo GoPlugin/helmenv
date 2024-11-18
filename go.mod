@@ -3,7 +3,6 @@ module github.com/goplugin/helmenv
 go 1.18
 
 require (
-	github.com/cavaliercoder/grab v2.0.0+incompatible
 	github.com/ghodss/yaml v1.0.0
 	github.com/imdario/mergo v0.3.13
 	github.com/kelseyhightower/envconfig v1.4.0
