@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - uses: goplugin/tool-versions-to-env-action@v1.0.7
         id: go-version
       - run: echo ${{ steps.go-version.outputs.golang_version }}
@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - uses: goplugin/tool-versions-to-env-action@v1.0.7
         id: go-version
       - name: Install Go ${{ steps.go-version.outputs.golang_version }}
@@ -41,7 +41,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - uses: goplugin/tool-versions-to-env-action@v1.0.7
         id: tool-versions
       - uses: azure/setup-helm@v2.1
@@ -55,7 +55,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Install asdf dependencies
         uses: asdf-vm/actions/install@v1.1.0
       - name: Run actionlint
