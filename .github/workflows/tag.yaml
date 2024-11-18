@@ -14,7 +14,7 @@ jobs:
       - uses: goplugin/tool-versions-to-env-action@v1.0.7
         id: go-version
       - name: Install Go ${{ steps.go-version.outputs.golang_version }}
-        uses: actions/setup-go@v3
+        uses: actions/setup-go@v5
         with:
           go-version: ${{ steps.go-version.outputs.golang_version }}
       - name: Unshallow
