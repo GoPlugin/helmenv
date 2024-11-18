@@ -1,0 +1,60 @@
+plugin:
+  image:
+    image: public.ecr.aws/plugin/plugin
+    version: 1.5.0-nonroot
+  web_port: 6688
+  p2p_port: 8090
+  resources:
+    requests:
+      cpu: 350m
+      memory: 1024Mi
+    limits:
+      cpu: 350m
+      memory: 1024Mi
+db:
+  stateful: false
+  capacity: 1Gi
+  resources:
+    requests:
+      cpu: 250m
+      memory: 256Mi
+    limits:
+      cpu: 250m
+      memory: 256Mi
+replicas: 1
+
+env:
+  DATABASE_URL: postgresql://postgres:node@0.0.0.0/plugin?sslmode=disable
+  DATABASE_NAME: plugin
+  ETH_URL: ws://geth:8546
+  ETH_CHAIN_ID: "1337"
+  ALLOW_ORIGINS: '*'
+  PLUGIN_DEV: "true"
+  FEATURE_EXTERNAL_INITIATORS: "false"
+  PLUGIN_PGPASSWORD: node
+  PLUGIN_PORT: "6688"
+  PLUGIN_TLS_PORT: "0"
+  FEATURE_OFFCHAIN_REPORTING: "true"
+  JSON_CONSOLE: "false"
+  LOG_LEVEL: debug
+  MINIMUM_CONTRACT_PAYMENT_PLI_JUELS: "0"
+  P2P_LISTEN_IP: 0.0.0.0
+  P2P_LISTEN_PORT: "6690"
+  ROOT: ./clroot
+  SECURE_COOKIES: "false"
+  ETH_MAX_IN_FLIGHT_TRANSACTIONS: "16"
+  KEEPER_REGISTRY_SYNC_INTERVAL: "5s"
+  KEEPER_REGISTRY_PERFORM_GAS_OVERHEAD: "150000"
+  KEEPER_TURN_LOOK_BACK: "0"
+  EXPLORER_URL:
+  EXPLORER_ACCESS_KEY:
+  EXPLORER_SECRET:
+  SESSION_TIMEOUT: "999h"
+
+podAnnotations: {}
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}

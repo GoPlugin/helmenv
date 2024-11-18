@@ -1,0 +1,12 @@
+namespace_prefix: plugin
+charts:
+  geth:
+    index: 1
+  mockserver-config:
+    index: 1
+  mockserver:
+    index: 2
+  plugin:
+    index: 2
+    values:
+      replicas: 1
